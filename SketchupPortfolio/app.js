@@ -1,14 +1,13 @@
-document.addEventListener("DOMContentLoaded", function(){
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 280) {
-          document.getElementById('navbar_top').classList.add('fixed-top');
-          // add padding top to show content behind navbar
-          navbar_height = document.querySelector('.navbar').offsetHeight;
-          document.body.style.paddingTop = navbar_height + 'px';
-        } else {
-          document.getElementById('navbar_top').classList.remove('fixed-top');
-           // remove padding top from body
-          document.body.style.paddingTop = '0';
-        } 
-    });
-  }); 
+const nav = document.querySelector('#main');
+const topOfNav = nav.offsetTop;
+
+function fixNav() {
+    if(window.scrollY >= topOfNav) {
+        document.body.style.paddingTop = nav.offsetHeight + 'px';
+        document.body.classList.add('fixed-nav');
+    } else {
+        document.body.classList.remove('fixed-nav');
+        document.body.style.paddingTop = 0;
+    }
+    window.addEventListener('scroll', fixNav)
+}

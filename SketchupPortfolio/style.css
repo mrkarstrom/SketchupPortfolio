@@ -11,6 +11,33 @@ body {
  
 }
 
+h1 {
+    color: black;
+    font-size: 7vw;
+    text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    background-color: #D6DBB2;
+    top: 0;
+    width: 100%;
+    transition: all 0.5s;
+    position: relative;
+    z-index: 1;
+}
+
+.fixed-nav {
+    position: fixed;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.2) ;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
 #navbar_top {
     height: 115px;
 }
